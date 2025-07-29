@@ -48,11 +48,6 @@ The website is a **multi-route React application** built with performance, anima
 
 ---
 
-## 🙋 About Me
-
-I’m **Reddy Sai Nivas C**, a developer from PES University with a deep interest in blending code with creativity. I’ve worked on projects ranging from **REM sleep stage classification** to **drowsiness detection**, and I love building experiences that are both useful and visually engaging.
-
----
 
 ## 🔗 Connect with Me
 
