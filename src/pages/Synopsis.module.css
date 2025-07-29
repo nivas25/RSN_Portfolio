@@ -193,8 +193,8 @@
   border: 1px solid var(--aurora-panel-border);
   border-radius: 16px;
   padding: 1.5rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); */
   transition: background-color 0.3s, border-color 0.3s;
 }
 .panelSectionTitle {
@@ -257,7 +257,7 @@
     var(--exp-glow-1),
     var(--edu-glow-2)
   );
-  filter: blur(4px);
+  /* filter: blur(4px); */
   opacity: 0.7;
   transition: opacity 0.3s ease, height 0.3s ease, filter 0.3s ease;
 }

@@ -49,7 +49,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }
 [data-theme="light"] .auroraPanel {
   background-color: #f8f9fa;
@@ -70,8 +70,8 @@
   opacity: var(--aurora-opacity);
   background-size: 250% 250%, 200% 200%, 150% 150%;
   background-position: 50% 50%;
-  animation: aurora 20s ease-in-out infinite;
-  filter: blur(40px);
+  /* animation: aurora 20s ease-in-out infinite; */
+  filter: blur(100px);
   will-change: background-position;
 }
 
