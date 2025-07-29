@@ -1,0 +1,430 @@
+/* src/pages/Synopsis.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+/* Noto Sans for multi-language support */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Sans:wght@400;500&display=swap");
+
+/* === Keyframes === */
+@keyframes animatedGradientR {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes animatedTealGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes animatedBlueCyanGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* === Base Page Styles === */
+.pageContainer {
+  background-color: var(--page-background);
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.headerArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 8rem;
+}
+.titleContainer {
+  line-height: 1;
+  text-align: center;
+}
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 15vw;
+  font-weight: 900;
+  color: var(--text-color-primary);
+}
+.subtitle {
+  font-family: "Outfit", sans-serif;
+  color: var(--text-color-secondary);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* === Mobile Layout & Ordering === */
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.topContentContainer {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.mainInfoBlock {
+  text-align: center;
+}
+.educationBlock {
+  order: 4;
+}
+.experienceBlock {
+  order: 3;
+}
+.bottomGridWrapper {
+  order: 4;
+}
+
+/* === Bio & Name Styles === */
+.bioText {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  color: var(--synopsis-bio-text);
+  font-size: 1rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nameAnimationWrapper,
+.nameBlock,
+.nameInline,
+.nameGroup {
+  display: flex;
+}
+.nameBlock {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nameInline {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+.nameGroup {
+  align-items: baseline;
+  white-space: nowrap;
+}
+.imPrefix {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--synopsis-im-prefix);
+}
+.initial {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18vw;
+  font-weight: 700;
+  line-height: 1;
+}
+.suffix {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 9vw;
+  color: var(--synopsis-suffix);
+  opacity: 0.95;
+  overflow: hidden;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  margin-left: 0.2ch;
+}
+.sectionTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.heroR,
+.heroS,
+.heroN {
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+.heroR {
+  background-image: var(--synopsis-hero-r-gradient);
+  animation: animatedGradientR 6s ease-in-out infinite;
+}
+.heroS {
+  background-image: var(--synopsis-hero-s-gradient);
+  animation: animatedTealGradient 6s ease-in-out infinite;
+}
+.heroN {
+  background-image: var(--synopsis-hero-n-gradient);
+  animation: animatedBlueCyanGradient 6s ease-in-out infinite;
+}
+
+/* === "Digital Loom" Panel Styles === */
+.glassPanel {
+  background-color: var(--aurora-panel-bg);
+  background-image: var(--weave-texture);
+  border: 1px solid var(--aurora-panel-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.panelSectionTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.panelSubSection {
+  margin-bottom: 2.5rem;
+}
+.panelSubSection:last-child {
+  margin-bottom: 0;
+}
+.panelSubSectionTitle {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--aurora-panel-border);
+}
+.panelTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+}
+.loomTag {
+  font-family: "Noto Sans", "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.loomTag::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--edu-glow-1),
+    var(--exp-glow-1),
+    var(--edu-glow-2)
+  );
+  filter: blur(4px);
+  opacity: 0.7;
+  transition: opacity 0.3s ease, height 0.3s ease, filter 0.3s ease;
+}
+.loomTag:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--aurora-panel-border);
+}
+.loomTag:hover::after {
+  opacity: 1;
+  height: 3px;
+  filter: blur(5px);
+}
+
+/* Kinetic Text Container */
+.kineticContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 1.2em;
+  text-align: center;
+}
+.kineticText {
+  display: inline-block;
+  width: 100%;
+}
+
+/* InfoGrid Layout Styles */
+.infoGridContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.languagesPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.skillsPanel {
+  flex-grow: 1;
+}
+.resumePanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.resumeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--premium-card-bg);
+  border: 1px solid var(--premium-card-border);
+  color: var(--premium-text-primary);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.resumeButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Desktop Grid Layout */
+@media (min-width: 900px) {
+  .pageContainer {
+    padding: 2rem 4rem;
+  }
+  .headerArea {
+    margin-bottom: 6rem;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .contentArea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "top-content    top-content"
+      "edu-area       exp-area"
+      "bottom-grid    bottom-grid";
+    gap: 3rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  .topContentContainer {
+    grid-area: top-content;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    order: unset;
+    gap: 6rem;
+  }
+  .mainInfoBlock {
+    text-align: left;
+  }
+  .educationBlock {
+    grid-area: edu-area;
+    order: unset;
+  }
+  .experienceBlock {
+    grid-area: exp-area;
+    order: unset;
+  }
+  .bottomGridWrapper {
+    grid-area: bottom-grid;
+    order: unset;
+  }
+  .infoGridContainer {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .languagesPanel {
+    flex: 1;
+  }
+  .rightColumn {
+    flex: 1;
+  }
+  .bioText {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .nameBlock {
+    align-items: flex-start;
+  }
+  .nameInline {
+    justify-content: flex-start;
+  }
+  .sectionTitle {
+    text-align: left;
+  }
+  .cardContainer {
+    margin-left: 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: none;
+  }
+  .title {
+    font-size: clamp(3rem, 10vw, 7rem);
+  }
+  .subtitle {
+    margin-top: -0.5rem;
+  }
+  .imPrefix {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .initial {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+  }
+  .suffix {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+  .educationBlock .sectionTitle,
+  .experienceBlock .sectionTitle {
+    text-align: center;
+  }
+  .panelSectionTitle {
+    text-align: left;
+  }
+}

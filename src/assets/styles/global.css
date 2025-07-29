@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+/* === ROOT VARIABLES: LIGHT MODE === */
+:root {
+  /* Page Theme */
+  --page-background: #fdfdfd;
+  --text-primary: #111;
+  --text-secondary: #101010;
+  --name-color: #3e3c3c;
+  --overlay-bg-color: black;
+
+  /* Hub Page */
+  --hub-3d-text-color: #e9eff0;
+  --hub-3d-text-shadow-stack: #d0dbe2;
+  --hub-3d-text-shadow-drop: rgba(40, 50, 60, 0.1);
+  --hub-name-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Final Cube */
+  --cube-gradient: linear-gradient(160deg, #e7f1ee, #bde0d3, #a3bfb8);
+  --cube-glow-color: rgba(163, 191, 184, 0.5);
+  --cube-glow-color-hover: rgba(189, 224, 211, 0.7);
+  --cube-icon-color: #1e352f;
+  --cube-icon-glow: rgba(30, 53, 47, 0.3);
+
+  /* Page-Specific */
+  --synopsis-title: #0b1f1f;
+  --synopsis-subtitle: #5a7d7d;
+  --synopsis-bio-text: #1f3a3a;
+  --synopsis-im-prefix: #222;
+  --synopsis-suffix: #1f3a3a;
+  --synopsis-hero-r-gradient: linear-gradient(90deg, #ff9900, #ff6a00, #ff4500);
+  --synopsis-hero-s-gradient: linear-gradient(90deg, #004d59, #008190, #00b7b5);
+  --synopsis-hero-n-gradient: linear-gradient(90deg, #005f89, #008bc3, #00d5ff);
+
+  --repertoire-title: #1c1a1a;
+  --repertoire-content-text: #333;
+  --repertoire-hero-r-gradient: linear-gradient(
+    90deg,
+    #ff9900,
+    #ff6a00,
+    #ff4500
+  );
+
+  --nexus-title: #0a1f2a;
+  --nexus-content-text: #1f3a3a;
+  --nexus-hero-n-gradient: linear-gradient(90deg, #005f89, #008bc3, #00d5ff);
+
+  --premium-card-bg: #ffffff;
+  --premium-card-border: rgba(255, 255, 255, 0.1);
+  --premium-text-primary: #000000;
+  --premium-text-secondary: #222222;
+
+  --edu-glow-1: #38bdf8;
+  --edu-glow-2: #818cf8;
+  --exp-glow-1: #34d399;
+  --exp-glow-2: #f43f5e;
+
+  --aurora-gradient: radial-gradient(circle, #dbeafe 0%, transparent 50%),
+    radial-gradient(circle, #dcfce7 0%, transparent 50%),
+    radial-gradient(circle, #e0e7ff 0%, transparent 50%);
+  --aurora-opacity: 0.9;
+  --panel-subtitle-color: #008190;
+  --aurora-panel-border: rgba(0, 0, 0, 0.1);
+
+  /* Unified Neumorphic Palette (Light Mode) */
+  --switch-bg: #e0e5ec;
+  --switch-border-color: transparent;
+  --shadow-dark: #a3b1c6;
+  --shadow-light: #ffffff;
+  --off-track-color-start: #63d471;
+  --off-track-color-end: #51c060;
+  --on-track-color-start: #f89b29;
+  --on-track-color-end: #e88a18;
+
+  --section-color-1: #e9e7fd;
+  --section-color-2: #e0f2fe;
+  --section-color-3: #e0f7fa;
+  --section-color-4: #f0fdf4;
+}
+
+/* === DARK MODE OVERRIDES === */
+[data-theme="dark"] {
+  --page-background: #060606;
+  --text-primary: #ccd6f6;
+  --text-secondary: #a8b2d1;
+  --name-color: #e6f1ff;
+
+  /* Unified Neumorphic Palette (Dark Mode) */
+  --switch-bg: #191a21;
+  --switch-border-color: rgba(255, 255, 255, 0.04);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --shadow-light: rgba(255, 255, 255, 0.05);
+  --off-track-color-start: #30c67c;
+  --off-track-color-end: #25a26a;
+  --on-track-color-start: #ffc93e;
+  --on-track-color-end: #f5b821;
+
+  /* Hub Page */
+  --hub-3d-text-color: #1a3a63;
+  --hub-3d-text-shadow-stack: #0c2340;
+  --hub-3d-text-shadow-drop: rgba(0, 0, 0, 0.4);
+  --hub-name-shadow: rgba(0, 0, 0, 0.4);
+
+  --overlay-bg-color: #a1eebd;
+
+  /* Final Cube */
+  --cube-gradient: linear-gradient(160deg, #1e1b4b, #4338ca, #312e81);
+  --cube-glow-color: rgba(67, 56, 202, 0.4);
+  --cube-glow-color-hover: rgba(99, 102, 241, 0.5);
+  --cube-icon-color: #c7d2fe;
+  --cube-icon-glow: rgba(199, 210, 254, 0.25);
+
+  /* Page-Specific */
+  --synopsis-title: #e6f1ff;
+  --synopsis-subtitle: #8892b0;
+  --synopsis-bio-text: #ccd6f6;
+  --synopsis-im-prefix: #ccd6f6;
+  --synopsis-suffix: #e6f1ff;
+  --synopsis-hero-r-gradient: linear-gradient(90deg, #ffc947, #ff9a3c, #ff7135);
+  --synopsis-hero-s-gradient: linear-gradient(90deg, #22d3ee, #0ea5e9, #67e8f9);
+  --synopsis-hero-n-gradient: linear-gradient(90deg, #38bdf8, #60a5fa, #93c5fd);
+
+  --repertoire-title: #e6f1ff;
+  --repertoire-content-text: #ccd6f6;
+  --repertoire-hero-r-gradient: linear-gradient(
+    90deg,
+    #ffc947,
+    #ff9a3c,
+    #ff7135
+  );
+
+  --nexus-title: #e6f1ff;
+  --nexus-content-text: #ccd6f6;
+  --nexus-hero-n-gradient: linear-gradient(90deg, #38bdf8, #60a5fa, #93c5fd);
+
+  --premium-card-bg: #111827;
+  --premium-card-border: rgba(255, 255, 255, 0.1);
+  --premium-text-primary: #f9fafb;
+  --premium-text-secondary: #9ca3af;
+
+  --edu-glow-1: #38bdf8;
+  --edu-glow-2: #818cf8;
+  --exp-glow-1: #34d399;
+  --exp-glow-2: #f43f5e;
+
+  --aurora-gradient: radial-gradient(
+      circle,
+      var(--edu-glow-1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle, var(--edu-glow-2) 0%, transparent 50%),
+    radial-gradient(circle, var(--exp-glow-1) 0%, transparent 50%);
+  --aurora-opacity: 0.3;
+  --panel-subtitle-color: #22d3ee;
+  --aurora-panel-border: rgba(255, 255, 255, 0.1);
+
+  --section-color-1: #1e293b;
+  --section-color-2: #1e3a5f;
+  --section-color-3: #1a363a;
+  --section-color-4: #16302b;
+}
+
+/* === UNIVERSAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--page-background);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* === GLOBAL KEYFRAMES === */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

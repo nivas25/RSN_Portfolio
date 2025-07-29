@@ -1,0 +1,67 @@
+.toggleContainer {
+  width: 90px;
+  height: 42px;
+  border-radius: 21px;
+  position: relative;
+  cursor: pointer;
+  background: var(--switch-bg);
+  border: 1px solid var(--switch-border-color); /* Visible outer edge */
+  box-shadow: 7px 7px 15px var(--shadow-dark),
+    -7px -7px 15px var(--shadow-light);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.toggleContainer:hover {
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+/* Inner gradient background track */
+.toggleContainer::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border-radius: 17px;
+  background: linear-gradient(
+    145deg,
+    var(--off-track-color-start),
+    var(--off-track-color-end)
+  );
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Active state background */
+.toggleContainer.toggled::before {
+  background: linear-gradient(
+    145deg,
+    var(--on-track-color-start),
+    var(--on-track-color-end)
+  );
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2),
+    0 0 8px var(--on-track-color-start);
+}
+
+/* Circular toggle knob */
+.toggleHandle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 10;
+  background: var(--switch-bg);
+  box-shadow: 2px 2px 5px var(--shadow-dark), -2px -2px 5px var(--shadow-light);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Position and inner shadow when toggled */
+.toggleContainer.toggled .toggleHandle {
+  transform: translateX(48px);
+  box-shadow: inset 3px 3px 5px var(--shadow-dark),
+    inset -3px -3px 5px var(--shadow-light);
+}

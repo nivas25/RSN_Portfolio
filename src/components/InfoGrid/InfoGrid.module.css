@@ -1,0 +1,239 @@
+/* === Animations === */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%, 50% 100%, 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 0%, 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%, 50% 100%, 100% 50%;
+  }
+}
+@keyframes rotate-border {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* === Grid Container & Layout === */
+.infoGridContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.infoGridPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Section Title === */
+.sectionTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* === Aurora Panel (Card Style Box) === */
+.auroraPanel {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--aurora-panel-border);
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+[data-theme="light"] .auroraPanel {
+  background-color: #f8f9fa;
+}
+[data-theme="dark"] .auroraPanel {
+  background-color: #080c17;
+}
+.auroraPanel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--aurora-gradient);
+  opacity: var(--aurora-opacity);
+  background-size: 250% 250%, 200% 200%, 150% 150%;
+  background-position: 50% 50%;
+  animation: aurora 20s ease-in-out infinite;
+  filter: blur(40px);
+  will-change: background-position;
+}
+
+/* === Panel Content (Subsection) === */
+.panelSubSection {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.panelSubSection:last-child {
+  margin-bottom: 0;
+}
+.panelSubSectionTitle {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  color: var(--panel-subtitle-color);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--aurora-panel-border);
+}
+
+/* === Tag Styling (Skills / Tools etc.) === */
+.panelTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.itemTag {
+  font-family: "Noto Sans", "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+[data-theme="light"] .itemTag {
+  background-color: #ffffff;
+  color: #111;
+  border-color: #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+[data-theme="dark"] .itemTag {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-color: var(--aurora-panel-border);
+}
+.itemTag:hover {
+  transform: translateY(-3px);
+}
+[data-theme="light"] .itemTag:hover {
+  border-color: #ccc;
+}
+[data-theme="dark"] .itemTag:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === Animated Text (Kinetic Language) === */
+.kineticContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 1.2em;
+  text-align: center;
+}
+.kineticText {
+  display: inline-block;
+  width: 100%;
+}
+
+/* === Resume Button (Gradient Border) === */
+.resumeButtonContainer {
+  margin-top: auto;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+.gradientButton {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2px;
+  transition: all 0.3s ease;
+}
+.gradientButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250%;
+  height: 250%;
+  background: conic-gradient(
+    from 0deg,
+    var(--edu-glow-2),
+    var(--exp-glow-1),
+    var(--exp-glow-2),
+    var(--edu-glow-1),
+    var(--edu-glow-2)
+  );
+  animation: rotate-border 4s linear infinite;
+}
+[data-theme="light"] .gradientButton::before {
+  background: conic-gradient(
+    from 0deg,
+    #008bc3,
+    #ff6a00,
+    #008190,
+    #005f89,
+    #008bc3
+  );
+}
+.buttonContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+[data-theme="light"] .buttonContent {
+  background-color: #f8f9fa;
+  color: #111;
+}
+[data-theme="dark"] .buttonContent {
+  background-color: #0b0f19;
+  color: var(--text-secondary);
+}
+.gradientButton:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+.gradientButton:hover .buttonContent {
+  color: var(--text-primary);
+}
+[data-theme="dark"] .gradientButton:hover .buttonContent {
+  background-color: #111827;
+}
+
+/* === Responsive Grid for Desktop === */
+@media (min-width: 900px) {
+  .infoGridContainer {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+  .infoGridPanel {
+    flex: 1;
+  }
+}

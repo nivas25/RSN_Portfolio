@@ -1,0 +1,94 @@
+/* Main container for the sticker showcase */
+.showcaseContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px; /* Adds 3D depth for animations */
+}
+
+/* Colorful circular frame behind the sticker */
+.colorfulFrame {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+
+  /* Vibrant animated gradient */
+  background: linear-gradient(
+    45deg,
+    #08f7fe,
+    #09fbd3,
+    #f5d300,
+    #f78b00,
+    #fe53bb,
+    #08f7fe
+  );
+  background-size: 600% 600%;
+
+  /* Smooth color movement + pulsing */
+  animation: animatedGradient 12s ease-in-out infinite,
+    breathingEffect 7s ease-in-out infinite;
+
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2),
+    0 10px 40px rgba(150, 150, 150, 0.25);
+  z-index: 1;
+}
+
+/* Keyframe: gradient shifts left to right and back */
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Keyframe: subtle breathing and 3D rotation */
+@keyframes breathingEffect {
+  0% {
+    transform: scale(0.95) rotateY(-10deg) rotateX(10deg);
+  }
+  50% {
+    transform: scale(1.05) rotateY(10deg) rotateX(-10deg);
+  }
+  100% {
+    transform: scale(0.95) rotateY(-10deg) rotateX(10deg);
+  }
+}
+
+/* The sticker image itself (animated via framer-motion) */
+.stickerImage {
+  position: absolute;
+  width: 125%;
+  height: 125%;
+  bottom: 8%;
+  object-fit: contain;
+
+  filter: drop-shadow(0 12px 30px rgba(0, 20, 30, 0.35));
+  transform: rotateY(-15deg) rotateX(10deg);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* On hover: both the frame and image gently align and scale */
+.showcaseContainer:hover .colorfulFrame,
+.showcaseContainer:hover .stickerImage {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.05);
+}
+
+/* Responsive size for smaller screens */
+@media (max-width: 768px) {
+  .showcaseContainer {
+    width: 220px;
+    height: 220px;
+  }
+}

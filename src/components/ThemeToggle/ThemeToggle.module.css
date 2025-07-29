@@ -1,0 +1,96 @@
+/* Cube face animation for smooth background panning */
+@keyframes panGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Toggle button container positioned at top-right */
+.toggleContainer {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+/* Core cube container with 3D transform style */
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover effect for scaling and slight rotation */
+.toggleContainer:hover .cube {
+  transform: scale(1.15) rotateY(20deg) rotateX(-20deg);
+}
+
+/* Common styles for each face of the cube */
+.cubeFace {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--cube-gradient);
+  background-size: 250% 250%;
+  animation: panGradient 25s ease-in-out infinite alternate;
+  backface-visibility: hidden;
+  border: none;
+  box-shadow: var(--cube-face-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Glow effect intensifies on hover */
+.toggleContainer:hover .cubeFace {
+  box-shadow: var(--cube-face-shadow-hover);
+}
+
+/* Cube face positioning in 3D space */
+.front {
+  transform: rotateY(0deg) translateZ(25px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(25px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(25px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(25px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+
+/* SVG icon styling for light and dark icons */
+.iconSvg {
+  width: 26px;
+  height: 26px;
+  color: var(--cube-icon-color);
+  filter: drop-shadow(0 0 5px var(--cube-icon-glow));
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Fill only for Moon icon (path-based) */
+.iconSvg path {
+  fill: currentColor;
+}

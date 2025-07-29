@@ -1,0 +1,211 @@
+/* Main card container styling */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--switch-bg);
+  border-radius: 20px;
+  padding: 1.25rem;
+  cursor: pointer;
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Lift card on hover */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Animated sheen effect */
+.glossySheen {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.5s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Move sheen on hover */
+.card:hover .glossySheen {
+  left: 150%;
+}
+
+/* Ensure image and content are above the sheen */
+.imageContainer,
+.contentContainer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Image section with 16:9 aspect ratio */
+.imageContainer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+    -4px -4px 8px var(--shadow-light);
+  position: relative;
+}
+
+/* Semi-transparent overlay above image */
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Image scaling effect on hover */
+.projectImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .projectImage {
+  transform: scale(1.08);
+}
+
+/* Badge showing project status */
+.statusBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Status color variations */
+.completed {
+  background: rgba(45, 212, 191, 0.3);
+  color: #f0fdfa;
+}
+
+.inProgress {
+  background: rgba(251, 191, 36, 0.3);
+  color: #fefce8;
+}
+
+/* Container for project title and description */
+.contentContainer {
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+/* Project title with icon */
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.typeIcon {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.projectTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Description below title */
+.projectDescription {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Technologies used in project */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.techPill {
+  background: var(--page-background);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px var(--shadow-dark),
+    inset -2px -2px 4px var(--shadow-light);
+}
+
+/* Call-to-action (like "View Project") */
+.ctaHover {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+/* Show CTA on hover */
+.card:hover .ctaHover {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .card {
+  background: var(--switch-bg);
+  box-shadow: 8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  border: 1px solid var(--switch-border-color);
+}
+
+[data-theme="dark"] .imageContainer {
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+}
+
+[data-theme="dark"] .techPill {
+  background: var(--page-background);
+  border: 1px solid var(--switch-border-color);
+  box-shadow: inset 2px 2px 4px var(--shadow-dark),
+    inset -2px -2px 4px var(--shadow-light);
+}

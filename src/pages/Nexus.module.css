@@ -1,0 +1,298 @@
+/* === FONT IMPORTS === */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap");
+
+/* === KEYFRAMES === */
+@keyframes animatedBlueCyanGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotateRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* === MAIN PAGE CONTAINER === */
+.pageContainer {
+  background-color: var(--page-background);
+  width: 100%;
+  min-height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* === HEADER AREA === */
+.headerArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.titleContainer {
+  line-height: 1;
+  text-align: center;
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 15vw;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-family: "Outfit", sans-serif;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.heroN {
+  background: var(--nexus-hero-n-gradient);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: animatedBlueCyanGradient 6s ease-in-out infinite;
+}
+
+/* === CONTENT LAYOUT (MOBILE FIRST) === */
+.contentGrid {
+  margin-top: -3rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 550px;
+  gap: 2rem;
+}
+
+.glyphColumn {
+  width: 100%;
+}
+
+/* === TYPOGRAPHY === */
+.mainHeading {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--text-primary);
+  text-transform: none;
+  margin: 0;
+}
+
+.subHeading {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.8;
+}
+
+.ctaContainer {
+  margin-top: 1rem;
+}
+
+.emailDisplay {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: rgba(144, 202, 249, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(144, 202, 249, 0.2);
+}
+
+/* === GLYPH CONTAINER === */
+.glyphContainer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  --ring-radius: 160px;
+  --icon-size: 42px;
+}
+
+.mandalaWrapper {
+  grid-area: 1 / 1;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.75);
+  transition: transform 0.3s ease;
+}
+
+.textCore {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(144, 202, 249, 0.2);
+  z-index: 3;
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 25, 47, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(144, 202, 249, 0.15),
+    inset 0 0 10px rgba(144, 202, 249, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.coreText {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--text-primary);
+  text-shadow: none;
+  padding-left: 4px;
+}
+
+/* === SOCIAL ICONS === */
+.socialsRing {
+  display: block;
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  z-index: 2;
+  animation: rotateRing 100s linear infinite;
+}
+
+.socialNode {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin: calc(var(--icon-size) / -2);
+  pointer-events: all;
+  transform: rotate(var(--angle)) translateY(var(--ring-radius));
+}
+
+.socialNode a {
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f0f4ff, #e8f5fc);
+  border: 1px solid rgba(200, 200, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 0 8px rgba(150, 180, 255, 0.15);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transform: rotate(calc(var(--angle) * -1));
+}
+
+.socialNode a:hover {
+  background: linear-gradient(135deg, #ffffff, #dbeeff);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(180, 210, 255, 0.25);
+  transform: scale(1.1) rotate(calc(var(--angle) * -1));
+  border-color: #e0eaff;
+}
+
+/* === DESKTOP LAYOUT (min-width: 900px) === */
+@media (min-width: 900px) {
+  .headerArea {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+
+  .titleContainer {
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .title {
+    font-size: clamp(3rem, 10vw, 7rem);
+  }
+
+  .contentGrid {
+    margin-top: -6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .textColumn {
+    align-items: flex-start;
+    text-align: left;
+    justify-self: end;
+    max-width: 500px;
+  }
+
+  .glyphColumn {
+    justify-self: flex-start;
+  }
+
+  .mandalaWrapper {
+    transform: scale(1);
+  }
+
+  .glyphContainer {
+    max-width: 550px;
+    --ring-radius: 250px;
+    --icon-size: 60px;
+  }
+
+  .textCore {
+    width: 220px;
+    height: 220px;
+  }
+
+  .coreText {
+    font-size: 2.8rem;
+  }
+
+  .socialNode a {
+    font-size: 28px;
+  }
+}

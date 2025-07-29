@@ -1,0 +1,14 @@
+.headerContainer {
+  width: 100px;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    /* Mobile-specific overrides can go here if needed */
+  }
+}
