@@ -227,6 +227,8 @@
   flex-wrap: wrap;
   gap: 1rem 1.25rem;
 }
+/* Find the existing .loomTag rule and add the new line */
+
 .loomTag {
   font-family: "Noto Sans", "Outfit", sans-serif;
   font-weight: 500;
@@ -239,7 +241,9 @@
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  will-change: transform;
 }
+
 .loomTag::after {
   content: "";
   position: absolute;
