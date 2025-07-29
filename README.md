@@ -24,7 +24,7 @@ The website is a **multi-route React application** built with performance, anima
 ## 🛠️ Technologies Used
 
 - **React.js + Vite** – Lightning-fast dev experience
-- **Tailwind CSS** – Fully custom UI styling
+- **CSS** – Fully custom UI styling
 - **Framer Motion** – Smooth and elegant page animations
 - **React Router DOM** – Clean and scalable routing
 - **Custom Context API** – Efficient theme and data handling
@@ -44,7 +44,7 @@ The website is a **multi-route React application** built with performance, anima
 
 ## 📸 Preview
 
-![Portfolio Screenshot](public/images/projects/portfolio/portfolio-01.png)
+![Portfolio Screenshot](public/images/projects/portfolio/portfolio-02.webp)
 
 ---
 
