@@ -8,11 +8,18 @@ import sticker2 from "../../assets/stickers/sticker2.png";
 import sticker3 from "../../assets/stickers/sticker3.png";
 import sticker4 from "../../assets/stickers/sticker4.png";
 
-// Add more stickers here if needed
 const stickers = [sticker1, sticker2, sticker3, sticker4];
 
 const StickerShowcase = () => {
   const [index, setIndex] = useState(0);
+
+  //NEW: Preload all sticker images on component mount for instant loading
+  useEffect(() => {
+    stickers.forEach((sticker) => {
+      const img = new Image();
+      img.src = sticker;
+    });
+  }, []);
 
   // Auto-rotate stickers every 3 seconds
   useEffect(() => {
