@@ -34,8 +34,23 @@ const socials = [
 
 const textOptions = ["Create", "Collaborate", "Connect"];
 
+// ✨ HELPER HOOK to get window width
+const useWindowWidth = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowWidth;
+};
+
 const Nexus = ({ onNavigate }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  // ✨ ADDED: Get window width and check if it's a desktop
+  const width = useWindowWidth();
+  const isDesktop = width >= 900; // 900px is the desktop breakpoint from your CSS
 
   // Cycle through the text options
   useEffect(() => {
@@ -88,12 +103,17 @@ const Nexus = ({ onNavigate }) => {
             {/* Rotating Mandala */}
             <motion.div
               className={styles.mandalaWrapper}
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 90,
-                ease: "linear",
-                repeat: Infinity,
-              }}
+              // ✨ UPDATED: Animation props are now conditional based on screen size
+              animate={isDesktop ? { rotate: 360 } : {}}
+              transition={
+                isDesktop
+                  ? {
+                      duration: 90,
+                      ease: "linear",
+                      repeat: Infinity,
+                    }
+                  : {}
+              }
             >
               <MandalaGlyph />
             </motion.div>
