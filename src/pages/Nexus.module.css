@@ -180,7 +180,7 @@
 .coreText {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 4px;
   color: var(--text-primary);

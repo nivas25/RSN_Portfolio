@@ -6,7 +6,7 @@ export const projectData = [
     category: "AI & Machine Learning",
     title: "REM Sleep Stage Classifier",
     type: "ml-model",
-    status: "Completed",
+    status: "In Progress",
     description:
       "Classifies REM sleep stages using EEG, EOG, EMG, and ECG biosignal data.",
     techStack: [
@@ -144,7 +144,7 @@ export const projectData = [
       "/images/projects/hostel/hostel-05.webp",
     ],
     liveUrl: "#",
-    githubUrl: "https://github.com/nivas25/Hostel_food_managment_system-",
+    githubUrl: "https://github.com/nivas25/Hostel_food_management_system",
     longDescription:
       "The system allows hostel students to view menus, place food orders, and submit feedback. Admins can update menus, track consumption stats, and manage student preferences.",
     myRole: "Full Stack Developer",
@@ -179,7 +179,7 @@ export const projectData = [
       "/images/projects/portfolio/portfolio-05.webp",
     ],
     liveUrl: "#",
-    githubUrl: "https://github.com/nivas25/portfolio",
+    githubUrl: "https://github.com/nivas25/RSN_Portfolio",
     longDescription:
       "This dynamic and responsive portfolio site showcases my AI/ML and web development work. It includes animated project cards, smooth transitions, and quick access to GitHub and LinkedIn.",
     myRole: "Frontend Developer & Designer",
